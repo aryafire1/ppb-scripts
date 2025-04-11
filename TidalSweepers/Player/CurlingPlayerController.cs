@@ -65,6 +65,8 @@ public class CurlingPlayerController : PlayerController
 
         UIPortraitInit();
         AnimManager.main.SetAll(true);
+        AnimManager.main.team1Stick.SetBool("isScrubbing", false);
+        AnimManager.main.team2Stick.SetBool("isScrubbing", false);
         AnimManager.main.team2p1.SetBool("team2Mirror", true);
         AnimManager.main.team2p2.SetBool("team2Mirror", true);
         AnimManager.main.team2Stick.SetBool("team2Mirror", true);

@@ -44,12 +44,12 @@ public class AnimManager : MonoBehaviour
     public void Team1(bool state){
         team1p1.SetBool("Curling", state);
         team1p2.SetBool("Scrubbing", state);
-        team1p2.SetBool("IsScrubbing", state);
+        //team1p2.SetBool("IsScrubbing", state);
     }
     public void Team2(bool state){
         team2p1.SetBool("Curling", state);
         team2p2.SetBool("Scrubbing", state);
-        team2p2.SetBool("IsScrubbing", state);
+        //team2p2.SetBool("IsScrubbing", state);
     }
     public void Team1Trigger() {
         team1p1.SetTrigger("IsCurling");
