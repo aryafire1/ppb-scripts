@@ -94,6 +94,7 @@ public class GizmoAngle : MonoBehaviour
         handler.transform.GetChild(0).rotation = Quaternion.Euler(0, aimAngle, 0); //curling player rotation
         rb.velocity = power * powerStrength * puck.transform.forward;
         StartCoroutine(PlayerVelocity());
+        handler.gameObject.transform.GetChild(0).GetComponent<Rigidbody>().velocity = rb.velocity * 0.5f;
 
         CurlingSound.main.PlayMovingSound(CurlingSound.main.puckSlide, rb);
 
@@ -124,6 +125,8 @@ public class GizmoAngle : MonoBehaviour
             handler.nextTeam.puck.GetComponent<GizmoAngle>().enabled = !handler.nextTeam.puck.GetComponent<GizmoAngle>().enabled;
             handler.nextStart.SetActive(true);
 
+            handler.gameObject.transform.GetChild(0).GetComponent<Rigidbody>().velocity = Vector3.zero;
+            handler.gameObject.transform.GetChild(0).position = handler.startpoint + new Vector3(0, 0, -1);
             handler.gameObject.transform.GetChild(1).GetComponent<Rigidbody>().velocity = Vector3.zero;
             handler.gameObject.transform.GetChild(1).position = handler.playerStartpoint;
             particlePouf.SetActive(true);
@@ -138,6 +141,7 @@ public class GizmoAngle : MonoBehaviour
 
     IEnumerator PlayerVelocity() {
         yield return null;
+        
         handler.gameObject.transform.GetChild(1).GetComponent<Rigidbody>().velocity = rb.velocity;
         StartCoroutine(PlayerVelocity());
     }

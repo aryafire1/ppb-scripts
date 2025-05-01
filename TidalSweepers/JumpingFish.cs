@@ -34,7 +34,7 @@ public class JumpingFish : MonoBehaviour
         if (check == 10) {
             anim.SetTrigger("Jump");
         }
-        Debug.Log(check);
+        //Debug.Log(check);
         yield return new WaitForSeconds(1f);
         StartCoroutine(RandomJump());
     }

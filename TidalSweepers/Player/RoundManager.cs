@@ -120,8 +120,8 @@ public class RoundManager : MonoBehaviour
 
     IEnumerator ParticleDelay() {
         yield return new WaitForSeconds(1f);
-        team1Handler.gameObject.transform.GetChild(1).GetChild(1).gameObject.SetActive(false);
-        team2Handler.gameObject.transform.GetChild(1).GetChild(1).gameObject.SetActive(false);
+        team1Handler.gameObject.transform.GetChild(2).gameObject.SetActive(false);
+        team2Handler.gameObject.transform.GetChild(2).gameObject.SetActive(false);
     }
 
 #endregion
